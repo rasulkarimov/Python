@@ -1,9 +1,17 @@
 #!/usr/bin/python3
 import os
+import getpass
+
 os.system("tput setaf 1")
 print("\t\t\tWelcome to my TIU")
 os.system("tput setaf 5")
 print("\t\t\t---------------------------")
+
+passwd = getpass.getpass("Enter you password: ")
+authpass = "test"
+if passwd != authpass:
+  print("Password incorrect")
+  exit()
 
 print("Where you want to perform you job local/remote")
 location = input()
