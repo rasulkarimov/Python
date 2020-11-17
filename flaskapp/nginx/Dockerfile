@@ -12,5 +12,8 @@ RUN apk --update add nginx && \
 
 COPY conf.d/app.conf /etc/nginx/conf.d/app.conf
 
-EXPOSE 80 443
+RUN chgrp -R 0 /var/lib/nginx /run/nginx /etc/nginx && \
+    chmod -R g=u /var/lib/nginx /run/nginx /etc/nginx
+
+EXPOSE 8081
 CMD ["nginx", "-g", "daemon off;"]
