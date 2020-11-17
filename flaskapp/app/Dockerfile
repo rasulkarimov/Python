@@ -7,6 +7,9 @@ ENV GROUP_ID=1000 \
 
 WORKDIR /var/www/
 
+RUN chgrp -R 0 /var/www/ && \
+    chmod -R g=u /var/www/
+
 ADD ./requirements.txt /var/www/requirements.txt
 RUN pip install -r requirements.txt
 ADD . /var/www/
