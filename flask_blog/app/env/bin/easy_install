@@ -1,4 +1,4 @@
-#!/home/rasul/python/flask_blog/env/bin/python3.6
+#!/home/rasul/python/flask_blog/app/env/bin/python3
 
 # -*- coding: utf-8 -*-
 import re
