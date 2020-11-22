@@ -18,6 +18,6 @@ RUN chgrp -R 0 /var/lib/nginx /run/nginx /etc/nginx && \
     chmod -R g=u /var/lib/nginx /run/nginx /etc/nginx && \
     sed -i s/127.0.0.1/${FLASK_APP}/g  /etc/nginx/conf.d/app.conf 
 
-EXPOSE 80
+EXPOSE 8090
 
 CMD ["nginx", "-g", "daemon off;"]
