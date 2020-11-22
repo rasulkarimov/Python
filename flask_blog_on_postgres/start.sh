@@ -16,3 +16,10 @@ sudo podman run -d --name nginx_blog --pod blog_pod nginx_blog
 sudo podman exec flask_blog flask db init
 sudo podman exec flask_blog flask db migrate
 sudo podman exec flask_blog flask db upgrade
+
+#openshift
+oc get template postgresql-ephemeral -n openshift -o json > postgres.json
+
+oc process -f postgres.json -p POSTGRESQL_USER=postgres1 -p POSTGRESQL_PASSWORD=postgres1 -p POSTGRESQL_DATABASE=posts_api -p DATABASE_SERVICE_NAME=postgres | oc create -f -
+
+

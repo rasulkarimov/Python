@@ -9,7 +9,7 @@ from sqlalchemy.sql import func
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres1:postgres1@localhost:5432/posts_api"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres1:postgres1@postgres:5432/posts_api"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
