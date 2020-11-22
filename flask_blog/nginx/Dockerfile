@@ -2,7 +2,7 @@ FROM alpine:latest
 
 MAINTAINER rasulkarimov
 
-ENV FLASK_APP=10.88.0.59
+ENV FLASK_APP=127.0.0.1
 
 RUN apk --update add nginx && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
