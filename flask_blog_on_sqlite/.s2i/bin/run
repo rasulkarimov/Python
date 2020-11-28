@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -f app.py ] && [ -f wsgi.py ] ; then
+  exec  gunicorn -w 4 --bind 0.0.0.0:8080 wsgi
+elif [ -f app.py ] ; then
+  exec  python3 app.py
+else
+  echo "app.py file not found"
+  exit 666
+fi

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Installing app source.."
+mv /tmp/src/* /opt/app-root/src
+
+echo "seting permissions"
+exect chgrp 0 /opt/app-root
+exect chmod g=u /opt/app-root
+
