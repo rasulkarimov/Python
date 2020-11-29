@@ -3,6 +3,10 @@
 echo "Installing app source.."
 mv /tmp/src/* /opt/app-root/src
 
+if [ -f requirements.txt ] ; then
+  pip install -r ./requirements.txt
+fi
+
 echo "seting permissions"
 exect chgrp 0 /opt/app-root
 exect chmod g=u /opt/app-root
