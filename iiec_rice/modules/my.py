@@ -15,3 +15,7 @@ def b():
 
 def st():
     print("student1")
+
+a()
+b()
+st()
