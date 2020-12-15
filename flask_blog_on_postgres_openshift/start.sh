@@ -5,11 +5,9 @@ oc process -f postgres.json -p POSTGRESQL_USER=postgres1 -p POSTGRESQL_PASSWORD=
 
 oc new-app --as-deployment-config --name flask https://github.com/rasulkarimov/python --context-dir flask_blog_on_postgres_openshift/app/
 
-flask db init
-flask db migrate
-flask db upgrade
-
+oc exec $(oc get pods -l deployment=flask-1 -o jsonpath='{..metadata.name}') -it -- flask db init
+oc exec $(oc get pods -l deployment=flask-1 -o jsonpath='{..metadata.name}') -it -- flask db migrate
+oc exec $(oc get pods -l deployment=flask-1 -o jsonpath='{..metadata.name}') -it -- flask db upgrade
 
 oc new-app --as-deployment-config --name nginx https://github.com/rasulkarimov/python --context-dir flask_blog_on_postgres_openshift/nginx/
-
 
