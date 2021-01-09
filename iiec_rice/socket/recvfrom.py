@@ -7,7 +7,7 @@ myp = socket.SOCK_DGRAM
 
 s = socket.socket( afn, myp )
 
-ip = "192.168.0.30"
+ip = "192.168.0.12"
 port = 1234
 
 s.bind( (ip,port) )
