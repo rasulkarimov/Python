@@ -11,7 +11,6 @@ s.bind( (ip, port) )
 
 s.listen()
 
-#client A
 def a(csession, addr):
     print(addr)
     csession.send(b"I'n server")
