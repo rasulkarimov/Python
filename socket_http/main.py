@@ -57,6 +57,5 @@ def run():
         client_socket.sendall(response)
         client_socket.close()
 
-
 if __name__ == '__main__':
     run()
