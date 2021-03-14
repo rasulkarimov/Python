@@ -1,0 +1,2 @@
+# to set debugging environment
+export FLASK_ENV=development
