@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # web cam photo click
 # pip install opencv-python
 import cv2
